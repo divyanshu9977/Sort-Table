@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="empTable">
+        <tr>
+            <th>Name</th><th onClick="sortTable()">Salary</th>
+        </tr>
+        <tr><td>Amit</td><td>20000</td></tr>
+        <tr><td>Shaym</td><td>40000</td></tr>
+        <tr><td>Ram</td><td>10000</td></tr>
+        <tr><td>Radha</td><td>80000</td></tr>
+    </table>
+
+    <script>
+        function sortTable(){
+            let rows = Array.from(empTable.rows).slice(1);
+            rows.sort((a,b)=> a.cells[1].innerText - b.cells[1].innerText);
+            rows.forEach(row => empTable.appendChild(row));
+        }
+    </script>
+</body>
+</html>
